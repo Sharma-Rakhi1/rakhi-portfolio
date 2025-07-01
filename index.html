@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Rakhi Sharma | Portfolio</title>
+  <link href="https://fonts.googleapis.com/css2?family=MedievalSharp&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+  <nav class="nav">
+    <div class="nav-logo">Rakhi Sharma</div>
+    <ul class="nav-links">
+      <li><a href="#about">About</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#profiles">Profiles</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+
+  <header class="hero hero-flex">
+    <div class="hero-left">
+      <div class="profile-container">
+        <img src="mine-Photoroom.png" alt="Rakhi Sharma" class="profile-pic" />
+        <div class="floating-icons">
+          <img src="icons8-code-64.png" alt="Code" />
+          <img src="icons8-bug-64.png" alt="Bug" />
+          <img src="icons8-html-64.png" alt="HTML" />
+          <img src="icons8-github-64.png" alt="GitHub" />
+          <img src="icons8-ai-48.png" alt="AI" />
+          <img src="icons8-java-64.png" alt="Java" />
+        </div>
+      </div>
+    </div>
+
+    <div class="hero-right">
+      <h1 class="fade-in">Hi, I'm Rakhi Sharma</h1>
+      <p class="fade-in delay-1">CSE (Data Science) @ GL Bajaj Institute of Technology and Management</p>
+      <p class="fade-in delay-2">Full Stack Dev | Coding Enthusiast</p>
+      <p class="highlight">Fueling future tech with code and curiosity.</p>
+    </div>
+  </header>
+
+  <section id="about" class="section">
+    <h2>About Me</h2>
+    <p>
+      I'm currently pursuing B.Tech in Computer Science and Engineering (Data Science) from GL Bajaj Institute of Technology & Management (2022–2026).
+      Passionate about building scalable web applications and AI-based solutions. I’m a code enthusiast with interest in Data Analytics and applying knowledge through real-world projects.
+    </p>
+  </section>
+
+  <section id="projects" class="section">
+    <h2>Projects</h2>
+    <div class="card">
+      <h3>🧬 Sepsis Prediction Model</h3>
+      <p>Machine Learning-based model to predict early onset of sepsis for faster diagnosis.</p>
+      <a href="https://github.com/Sharma-Rakhi1/Sepsis_Prediction" target="_blank">GitHub ↗</a>
+    </div>
+    <div class="card">
+      <h3>📹 Video Face Detection</h3>
+      <p>OpenCV-powered face detection system using video input.</p>
+      <a href="https://github.com/Sharma-Rakhi1/Video_Face_detection" target="_blank">GitHub ↗</a>
+    </div>
+    <div class="card">
+      <h3>🎮 Simon Says</h3>
+      <p>Memory-based color pattern game built with HTML, CSS, and JavaScript.</p>
+      <a href="https://github.com/Sharma-Rakhi1/Simon_Says" target="_blank">GitHub ↗</a>
+    </div>
+  </section>
+
+  <section id="skills" class="section">
+    <h2>Skills</h2>
+    <ul class="skill-tags">
+      <li>Java</li><li>Python</li><li>C</li><li>DSA</li>
+      <li>HTML</li><li>CSS</li><li>JavaScript</li><li>React</li>
+      <li>Node.js</li><li>MongoDB</li><li>SQL</li><li>Basic C++</li>
+      <li>Networking</li><li>Machine Learning</li>
+    </ul>
+  </section>
+
+  <section id="profiles" class="section">
+    <h2>View Online Profiles</h2>
+    <p>
+      <a href="https://www.linkedin.com/in/rakhi-sharma22" target="_blank">LinkedIn ↗</a> |
+      <a href="https://github.com/Sharma-Rakhi1" target="_blank">GitHub ↗</a> |
+      <a href="https://leetcode.com/rakhi2211/" target="_blank">LeetCode ↗</a> |
+      <a href="https://www.geeksforgeeks.org/user/rakhi_4050/" target="_blank">GFG ↗</a> |
+      <a href="https://www.credly.com/users/rakhi-sharma.9a93bb45/badges" target="_blank">Earned Badges ↗</a>
+    </p>
+  </section>
+
+  <section id="contact" class="section">
+    <h2>Contact</h2>
+    <p>Email: <a href="mailto:rakhi2211sh@gmail.com">rakhi2211sh@gmail.com</a></p>
+    <p>Resume:<a href="https://drive.google.com/file/d/17zkC-LCjQbZEk3q58kHj1_oBb-7M0ZO1/view?usp=sharing" target="_blank">Resume↗</a></p>
+    <div class="coffee-nature">
+      <p>☕ Coffee, 🌿 Plants &mdash; <em>Nature Lover</em></p>
+    </div>
+  </section>
+<div class="magic-cursor" id="magicCursor"></div>
+
+<script>
+  const cursor = document.getElementById('magicCursor');
+  let lastX = window.innerWidth / 2;
+  let lastY = window.innerHeight / 2;
+  let currentX = lastX;
+  let currentY = lastY;
+
+  document.addEventListener('mousemove', (e) => {
+    currentX = e.clientX;
+    currentY = e.clientY;
+  });
+
+  function animateCursor() {
+    const dx = currentX - lastX;
+    const dy = currentY - lastY;
+    const distance = Math.sqrt(dx * dx + dy * dy);
+
+    // Tail effect based on speed
+    const scaleX = 1 + Math.min(distance / 20, 2); // up to 3x stretch
+    const rotation = Math.atan2(dy, dx) * (180 / Math.PI);
+
+    cursor.style.transform = `translate(${currentX}px, ${currentY}px) rotate(${rotation}deg) scaleX(${scaleX})`;
+
+    lastX += dx * 0.15;
+    lastY += dy * 0.15;
+
+    requestAnimationFrame(animateCursor);
+  }
+
+  animateCursor();
+</script>
+</body>
+</html>
